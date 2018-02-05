@@ -12,6 +12,7 @@ import { LogoutComponent } from './logout/logout.component';
 import {Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {MediaService} from './services/media.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MediaService} from './services/media.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [MediaService],
   bootstrap: [AppComponent]
