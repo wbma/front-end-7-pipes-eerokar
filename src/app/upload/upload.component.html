@@ -1,4 +1,9 @@
 <p>
-  <input type=file name="file">
-  <input type=submit placeholder="submit">
+  <input type=file name="file" (change)="setFile($event)">
+  <br>
+  <input [(ngModel)] = "media.title">
+  <br>
+  <input [(ngModel)] = "media.description">
+  <br>
+  <button (click)="startUpload()"> upload</button>
 </p>
