@@ -1,1 +1,21 @@
-<div>Display this content when logged in.</div>
+
+<p *ngIf="!this.userInfo">
+  You're not logged in !
+</p>
+<div *ngIf="this.userInfo">
+  <h2> Hello {{ this.userInfo.username }}</h2>
+
+  <h4> Newest pics </h4>
+  <div class="cardContainer">
+    <div class="imageCard" *ngFor="let image of newestImages">
+      <img [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + (image.filename | thumbnail: 'large')"/>
+      <h5> {{ image.title }} </h5>
+      <p> {{ image.description }} </p>
+   <!-- </div> -->
+
+    </div>
+    <div class="buttonContainer">
+      <button (click)="loadMore()"> More images </button>
+  </div>
+</div>
+</div>

@@ -39,7 +39,17 @@ export class MediaService {
     });
   }
 
-  register(user) {
+  getImages(fromIndex: string) {
+
+    return this.http.get(this.apiUrl + '/media', {
+      params: {
+        start: fromIndex,
+        limit: '10'
+      }
+    });
+  }
+
+    register(user) {
     return this.http.post(this.apiUrl + '/users', user);
   }
 
